@@ -37,6 +37,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+MEDIA_ROOT = '/static/img/'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,7 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap3',
     'tinymce',
-    'blogs'
+    'blogs',
+    'secretballot',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'oss.middleware.SecretBallotIpMiddleware',
 ]
 
 ROOT_URLCONF = 'oss.urls'

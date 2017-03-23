@@ -12,8 +12,9 @@ class ArticleModelAdminForm(ModelForm):
     content = forms.CharField(widget=AdvancedEditor())
     description = forms.CharField(max_length=300)
     AuthorFormSet = inlineformset_factory(Author,Article, fields=['author',])
+    pic = forms.ImageField()
 
     class Meta:
         model = Article
-        fields = ['title','content','description','author']
+        fields = ['title','content','description','author','pic']
 
