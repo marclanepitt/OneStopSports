@@ -22,6 +22,32 @@ class Article(models.Model):
     author = models.ForeignKey(Author, on_delete= models.CASCADE)
     pic = models.ImageField(upload_to=MEDIA_ROOT)
     content = tinymce_models.HTMLField()
+    HOCKEY = 'Hockey'
+    SOCCER = 'Soccer'
+    BASKETBALL = 'Basketball'
+    BASEBALL = 'Baseball'
+    FOOTBALL = 'Football'
+    COLLEGE_HOCKEY = 'College Hockey'
+    COLLEGE_SOCCER = 'College Soccer'
+    COLLEGE_BASKETBALL = 'College Basketball'
+    COLLEGE_BASEBALL = 'College Baseball'
+    COLLEGE_FOOTBALL = 'College Football'
+    OTHER = 'other'
+
+    SPORTS = (
+        (HOCKEY,'Hockey'),
+        (SOCCER , 'Soccer'),
+        (BASKETBALL , 'Basketball'),
+        (BASEBALL , 'Baseball'),
+        (FOOTBALL , 'Football'),
+        (COLLEGE_HOCKEY , 'College Hockey'),
+        (COLLEGE_SOCCER , 'College Soccer'),
+        (COLLEGE_BASKETBALL , 'College Basketball'),
+        (COLLEGE_BASEBALL , 'College Baseball'),
+        (COLLEGE_FOOTBALL , 'College Football'),
+        (OTHER , 'other'),
+    )
+    category = models.CharField(max_length=30,choices=SPORTS,default=OTHER)
 
     def __unicode__(self):
         return self.title
