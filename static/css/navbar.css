@@ -1,0 +1,35 @@
+
+
+    .navbar {
+        opacity: .9;
+    }
+
+    .navbar-custom :hover{
+        color: black;
+    }
+
+    .navbar-custom  .nav li a {
+        color: gray;
+        padding: 20px;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    .navbar-custom {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .navbar-brand {
+        color: darkgray;
+        padding: 20px;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }

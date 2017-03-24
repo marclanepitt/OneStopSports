@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 from tinymce import models as tinymce_models
+from django_extensions.db import fields
 from django.db import models
 import secretballot
 from oss.settings import MEDIA_ROOT
@@ -48,6 +49,7 @@ class Article(models.Model):
         (OTHER , 'other'),
     )
     category = models.CharField(max_length=30,choices=SPORTS,default=OTHER)
+    slug = fields.AutoSlugField(populate_from='title')
 
     def __unicode__(self):
         return self.title

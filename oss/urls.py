@@ -16,9 +16,14 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from views import homeview
+from blogs import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', homeview, name="Home"),
     url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^football/',views.FootballView,name='football'),
+    url(r'^basketball/',views.BasketballView,name='basketball'),
+    url(r'^baseball/',views.BaseballView,name='baseball'),
+    url(r'^(?P<slug>[a-z-0-9-]+)/$', views.detail, name='detail')
 ]
